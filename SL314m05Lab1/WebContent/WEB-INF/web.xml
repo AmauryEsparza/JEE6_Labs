@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <welcome-file-list>
+  	<welcome-file>index_lab5.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>NewServlet</servlet-name>
+  	<servlet-class>s1314m5.lab.NewServlet</servlet-class>
+  	<init-param>
+  		<param-name>KeyName</param-name>
+  		<param-value>Data value</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NewServlet</servlet-name>
+  	<url-pattern>/PathToServlet/*</url-pattern>
+  	<url-pattern>/AnotherPathToServlet/*</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
