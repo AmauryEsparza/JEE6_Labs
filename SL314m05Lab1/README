@@ -1,0 +1,40 @@
+
+Deployment Descriptor
+-> Keep related things together.
+-> Keep things that change independently separated. 
+
+web-fragment.xml
+-> Allow to modify the configuration for 3rd party libraries separated from the whole deployment descritor file.
+-> Located under META-INF folder. 
+
+Servlet mapping 
+-> Used to specify how the servlet will be found (URL) through the application. 
+-> Possible to respond with several different URL direction. 
+-> Same capability through Java annotations.
+
+Servlet Context information. (context-params, init-params)
+-> ServletContext contains the methods to access to this params. Even when refering to "init-params" as are called from ServletContext
+   get the context-params.
+      getInitParams(String name) : String
+      getInitParameterNames() : Enumeration<String>
+
+-> ie.  <web-fragment>
+          <context-param>
+            <param-name>ZZZ<param-name>
+            <param-value>LLL</param-value>
+          </context-param>
+        </web-fragment>
+        ------------------------------------
+        String contextParam = this.getServletContext().getInitParameter("ZZZ");
+        
+Servlet Initialization Parameters
+-> ie. <servlet>
+          <servlet-name>MyServlet</servlet-name>
+          <servlet-class>com.example.package.MyServlet</servlet-class>
+          <init-param>
+            <param-name>ZZZ<param-name>
+            <param-value>LLL</param-value>
+          </init-param>
+        </servlet>
+        --------------------------------------
+        String servletParam = this.getInitParameter("ZZZ"); //HTTPServlet
